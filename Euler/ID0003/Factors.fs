@@ -10,4 +10,5 @@ let quotient (value, candidateFactors) =
     divide value candidateFactors
 
 let factors primes value =
+    let primes = Seq.cache primes
     Seq.unfold quotient (value, primes)

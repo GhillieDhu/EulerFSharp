@@ -7,8 +7,7 @@ open Primes
 [<EntryPoint>]
 let main argv =
     let stopWatch = System.Diagnostics.Stopwatch.StartNew()
-    let primes = Seq.cache (primes ())
-    factors primes 600851475143L
+    factors (primes ()) 600851475143L
     |> Seq.max
     |> printfn "%A"
     stopWatch.Stop()
