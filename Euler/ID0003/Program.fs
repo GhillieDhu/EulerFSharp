@@ -6,7 +6,8 @@ open Primes
 
 [<EntryPoint>]
 let main argv =
-    factors (primes ()) 600851475143L
+    let primes = Seq.cache (primes ())
+    factors primes 600851475143L
     |> Seq.max
     |> printfn "%A"
     0 // return an integer exit code
