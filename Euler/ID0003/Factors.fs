@@ -2,7 +2,6 @@
 
 let quotient (value, candidateFactors) =
     let rec divide dividend divisor divisors =
-        printfn "%d, %d" dividend divisor
         match dividend, divisor * divisor > dividend, dividend % divisor with
         | 1L, _, _ -> None
         | _, true, _ -> Some (dividend, (1L, divisors))
