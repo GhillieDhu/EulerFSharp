@@ -12,4 +12,4 @@ let ``empty string is palindrome`` () =
 let ``single characters are palindromes`` () =
     let randChar =
         Arb.Default.Char ()
-    randChar |> Prop.forAll <| (string >> isPalindrome)
+    randChar |> Prop.forAll <| isPalindrome

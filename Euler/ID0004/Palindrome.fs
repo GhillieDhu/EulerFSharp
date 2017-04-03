@@ -1,7 +1,8 @@
 ﻿module Palindrome
 
-let isPalindrome (candidateString : string) =
-    let candidateArray = candidateString.ToCharArray ()
+let isPalindrome candidate =
+    let candidateArray =
+        (string candidate).ToCharArray ()
     candidateArray
     |> Array.rev
     |> (=) candidateArray
