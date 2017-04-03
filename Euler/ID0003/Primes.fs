@@ -16,3 +16,4 @@ let primes () =
         yield 2L
         yield! Seq.unfold nextPrime [2L]
     }
+    |> Seq.cache
