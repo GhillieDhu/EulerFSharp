@@ -14,5 +14,5 @@ let lcm divisors =
     |> Seq.collect (Seq.countBy id)
     |> Seq.groupBy fst
     |> Seq.map (fun (rf, counts) -> rf, snd (Seq.maxBy snd counts))
-    |> Seq.fold (fun acc (rf, count) -> acc * BigInteger.Pow(BigInteger rf, count)) BigInteger.One
+    |> Seq.fold (fun acc (rf, count) -> acc * (BigInteger rf)**count) BigInteger.One
     |> int64
