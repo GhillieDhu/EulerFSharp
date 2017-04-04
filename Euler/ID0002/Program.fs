@@ -1,10 +1,14 @@
-﻿// Learn more about F# at http://fsharp.org
-// See the 'F# Tutorial' project for more help.
+﻿open EvenFib
+open System.Diagnostics
 
-open EvenFib
-
-[<EntryPoint>]
-let main argv = 
+let solution () = 
     Seq.sum (evenSeq (fib 4000000))
     |> printfn "%d"
+
+[<EntryPoint>]
+let main argv =
+    let stopWatch = Stopwatch.StartNew()
+    solution ()
+    stopWatch.Stop()
+    printfn "%A" stopWatch.Elapsed
     0 // return an integer exit code
