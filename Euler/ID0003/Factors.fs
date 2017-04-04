@@ -7,7 +7,7 @@ let quotient (value, candidateFactors) =
         | _, true, _ -> Some (dividend, (1L, divisors))
         | _, _, 0L -> Some (divisor, (dividend / divisor, divisors))
         | _, _, _ -> divide dividend (Seq.head divisors) (Seq.tail divisors)
-    divide value (Seq.head candidateFactors) (Seq.tail candidateFactors)
+    divide value (Seq.head candidateFactors) candidateFactors
 
 let factors primes value =
     Seq.unfold quotient (value, primes)
