@@ -4,5 +4,4 @@ open Primes
 
 let prime n =
     primes ()
-    |> Seq.take n
-    |> Seq.last
+    |> Seq.item (n - 1)
