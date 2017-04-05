@@ -4,6 +4,7 @@ let nextPrime priorPrimes =
     let rec primeTest knownPrimes candidate =
         let isPrime =
             knownPrimes
+            |> List.filter (fun prime -> prime * prime <= candidate)
             |> List.forall (fun prime -> candidate % prime > 0L)
         if isPrime
         then Some (candidate, candidate :: knownPrimes)
