@@ -1,14 +1,17 @@
 ﻿module SumSquareDiff
 
-let sumSquares count =
+let naturals count =
     Seq.init count ((+) 1)
+
+let sumSquares series =
+    series
     |> Seq.map (fun i -> i*i)
     |> Seq.sum
 
-let squaredSum count =
-    Seq.init count ((+) 1)
+let squaredSum series =
+    series
     |> Seq.sum
     |> fun i -> i*i
 
-let ssd count =
-    (squaredSum count) - (sumSquares count)
+let ssd series =
+    (squaredSum series) - (sumSquares series)

@@ -3,7 +3,7 @@
 open SumSquareDiff
 
 let solution () = 
-    ssd 100
+    ssd (naturals 100)
     |> printfn "%d"
 
 [<EntryPoint>]
