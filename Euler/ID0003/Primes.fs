@@ -5,7 +5,7 @@ let nextPrime priorPrimes =
         let isPrime =
             knownPrimes
             |> List.filter (fun prime -> prime * prime <= candidate)
-            |> List.forall (fun prime -> candidate % prime > 0L)
+            |> List.foldBack (fun prime acc -> acc && (candidate % prime > 0L)) <| true
         if isPrime
         then Some (candidate, candidate :: knownPrimes)
         else primeTest knownPrimes (candidate + 1L)
