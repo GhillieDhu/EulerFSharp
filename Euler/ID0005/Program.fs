@@ -3,7 +3,7 @@
 open LCM
 
 let solution () = 
-    lcm (Seq.init 20 (int64 >> (+) 1L))
+    lcm (Seq.init 20 ((+) 1))
     |> printfn "%d"
 
 [<EntryPoint>]

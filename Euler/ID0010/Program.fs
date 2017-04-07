@@ -3,7 +3,7 @@
 open PrimeSum
 
 let solution problemNum = 
-    primeSum 200000L
+    primeSum 2000000
     |> printfn "Problem %d: %d" problemNum
 
 [<EntryPoint>]

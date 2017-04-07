@@ -10,6 +10,7 @@ let quotient (value, candidateFactors) =
     divide value (Seq.head candidateFactors) candidateFactors
     
 let factors64 primes value =
+    let primes = Seq.map int64 primes
     Seq.unfold quotient (value, primes)
 
 let factors primes value =

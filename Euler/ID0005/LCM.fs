@@ -10,9 +10,9 @@ let lcm divisors =
         primes ()
         |> Seq.takeWhile (fun i -> i <= maxFactor)
     divisors
-    |> Seq.map (factors64 primes)
+    |> Seq.map (factors primes)
     |> Seq.collect (Seq.countBy id)
     |> Seq.groupBy fst
     |> Seq.map (fun (rf, counts) -> rf, snd (Seq.maxBy snd counts))
     |> Seq.fold (fun acc (rf, count) -> acc * (BigInteger rf)**count) BigInteger.One
-    |> int64
+    |> int
