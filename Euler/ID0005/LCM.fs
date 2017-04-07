@@ -7,7 +7,7 @@ open System.Numerics
 let lcm divisors =
     let maxFactor = Seq.max divisors
     let primes =
-        primes ()
+        primes
         |> Seq.takeWhile (fun i -> i <= maxFactor)
     divisors
     |> Seq.map (factors primes)

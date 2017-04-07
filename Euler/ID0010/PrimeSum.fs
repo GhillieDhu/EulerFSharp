@@ -3,7 +3,7 @@
 open Primes
 
 let primeSum n =    
-    primes () 
+    primes
     |> Seq.takeWhile (fun p -> p < n)
     |> Seq.map int64
     |> Seq.sum

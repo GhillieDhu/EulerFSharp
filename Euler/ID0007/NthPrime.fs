@@ -3,5 +3,5 @@
 open Primes
 
 let prime n =
-    primes ()
+    primes
     |> Seq.item (n - 1)
