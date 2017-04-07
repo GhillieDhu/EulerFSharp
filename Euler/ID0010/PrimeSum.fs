@@ -3,8 +3,10 @@
 open Primes
 
 let primeSum n =
-    let primes =
-        primes () 
-        |> Seq.takeWhile (fun p -> p < n)
-    primes
+//    let primes =
+//        primes () 
+//        |> Seq.takeWhile (fun p -> p < n)
+    
+    primes () 
+    |> Seq.takeWhile (fun p -> p < n)
     |> Seq.sum

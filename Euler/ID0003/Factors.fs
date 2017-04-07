@@ -8,6 +8,9 @@ let quotient (value, candidateFactors) =
         | _, _, 0L -> Some (divisor, (dividend / divisor, divisors))
         | _, _, _ -> divide dividend (Seq.head divisors) (Seq.tail divisors)
     divide value (Seq.head candidateFactors) candidateFactors
+    
+let factors64 primes value =
+    Seq.unfold quotient (value, primes)
 
 let factors primes value =
-    Seq.unfold quotient (value, primes)
+    factors64 primes (int64 value)

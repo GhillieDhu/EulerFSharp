@@ -3,7 +3,7 @@ open Primes
 open System.Diagnostics
 
 let solution () =
-    factors (primes ()) 600851475143L
+    factors64 (primes ()) 600851475143L
     |> Seq.max
     |> printfn "%A"
 

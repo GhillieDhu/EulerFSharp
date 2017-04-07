@@ -1,21 +1,14 @@
 ﻿module Primes
 
-let nextPrime (primeCount, priorPrimes) =
-    let rec primeTest knownPrimes candidate =
-        let isPrime =
-            knownPrimes
-            |> Seq.takeWhile (fun prime -> prime * prime <= candidate)
-            |> Seq.forall (fun prime -> candidate % prime > 0L)
-        if isPrime
-        then Some (candidate, (primeCount + 1, seq { yield! priorPrimes; yield candidate }))
-        else primeTest knownPrimes (candidate + 1L)
-    let generatedPrimes = priorPrimes |> Seq.take primeCount
-    let firstCandidate = Seq.last generatedPrimes + 1L
-    primeTest generatedPrimes firstCandidate
+let nextPrime (lastPrime, priorPrimes) =
+    let isPrime candidate =
+        priorPrimes
+        |> List.filter (fun prime -> prime * prime <= candidate)
+        |> List.forall (fun prime -> candidate % prime > 0L)
+    let firstCandidate = lastPrime + 1L
+    Seq.initInfinite (int64 >> (+) firstCandidate)
+    |> Seq.find isPrime
+    |> fun candidate -> Some (candidate, (candidate, candidate :: priorPrimes))
 
-let rec primes () =
-    seq {
-        yield 2L
-        yield! Seq.unfold nextPrime (1, primes ())
-    }
-    |> Seq.cache
+let primes () =
+    Seq.unfold nextPrime (1L, [])
