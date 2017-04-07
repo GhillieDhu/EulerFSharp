@@ -5,8 +5,6 @@ let nextPrime (lastPrime, priorPrimes) =
         priorPrimes
         |> List.exists (fun prime -> candidate % prime = 0L)
         |> not
-//        |> List.filter (fun prime -> prime * prime <= candidate)
-//        |> List.forall (fun prime -> candidate % prime > 0L)
     let firstCandidate = lastPrime + 1L
     Seq.initInfinite (int64 >> (+) firstCandidate)
     |> Seq.find isPrime
