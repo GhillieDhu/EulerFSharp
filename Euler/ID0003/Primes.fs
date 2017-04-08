@@ -22,3 +22,4 @@ let primes =
         yield 3
         yield! Seq.unfold nextPrime 3
     }
+    |> Seq.cache
