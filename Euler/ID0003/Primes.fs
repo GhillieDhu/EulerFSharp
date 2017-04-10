@@ -1,16 +1,14 @@
 ﻿module Primes
 
 let primes =
-    let divisors =
-        seq {
-            yield 2
-            yield! Seq.initInfinite ((*) 2 >> (+) 3)
-        }
-        |> Seq.cache
+//    let divisors n =
+//        [3..2..(int (sqrt (float n)))]
     let nextPrime lastPrime =
         let isPrime candidate =
-            divisors
-            |> Seq.takeWhile (fun prime -> prime * prime <= candidate)
+            (candidate % 2 = 1)
+            &&
+//            [3..2..(int (sqrt (float candidate)))]
+            seq {for i in 3 ..2 .. (int (sqrt (float candidate))) -> i}
             |> Seq.exists (fun prime -> candidate % prime = 0)
             |> not
         let firstCandidate = lastPrime + 2
