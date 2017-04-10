@@ -60,7 +60,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="PrimeSum.fs" />
     <Compile Include="PrimeSumProperties.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Main0010.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

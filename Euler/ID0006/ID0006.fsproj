@@ -60,7 +60,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="SumSquareDiff.fs" />
     <Compile Include="SumSquareDiffProperties.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Main0006.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

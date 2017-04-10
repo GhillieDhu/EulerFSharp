@@ -60,7 +60,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Pythagoras.fs" />
     <Compile Include="PythagorasProperties.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Main0009.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

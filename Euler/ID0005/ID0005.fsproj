@@ -60,7 +60,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="LCM.fs" />
     <Compile Include="LCMProperties.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Main0005.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

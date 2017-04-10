@@ -3,18 +3,18 @@
 let primes =
     let nextPrime lastPrime =
         let isPrime candidate =
-            (candidate % 2 = 1)
+            (candidate % 2L = 1L)
             &&
-            seq {for i in 3 ..2 .. (int (sqrt (float candidate))) -> i}
-            |> Seq.exists (fun prime -> candidate % prime = 0)
+            seq {for i in 3L .. 2L .. (int64 (sqrt (float candidate))) -> i}
+            |> Seq.exists (fun prime -> candidate % prime = 0L)
             |> not
-        let firstCandidate = lastPrime + 2
-        Seq.initInfinite ((*) 2 >> (+) firstCandidate)
+        let firstCandidate = lastPrime + 2L
+        Seq.initInfinite (int64 >> (*) 2L >> (+) firstCandidate)
         |> Seq.find isPrime
         |> fun candidate -> Some (candidate, candidate)
     seq {
-        yield 2
-        yield 3
-        yield! Seq.unfold nextPrime 3
+        yield 2L
+        yield 3L
+        yield! Seq.unfold nextPrime 3L
     }
     |> Seq.cache

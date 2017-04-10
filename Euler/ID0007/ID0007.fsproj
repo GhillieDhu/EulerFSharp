@@ -60,7 +60,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="NthPrime.fs" />
     <Compile Include="NthPrimeProperties.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Main0007.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

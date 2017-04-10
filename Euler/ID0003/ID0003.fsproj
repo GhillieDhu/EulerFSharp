@@ -61,7 +61,7 @@
     <Compile Include="Primes.fs" />
     <Compile Include="Factors.fs" />
     <Compile Include="FactorsProperties.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Main0003.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

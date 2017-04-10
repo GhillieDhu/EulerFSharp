@@ -62,7 +62,7 @@
     <Compile Include="PalindromeProperties.fs" />
     <Compile Include="Product.fs" />
     <Compile Include="ProductProperties.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Main0004.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

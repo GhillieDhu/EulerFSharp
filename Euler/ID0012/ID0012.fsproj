@@ -6,14 +6,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>c395201d-3b3b-4d1d-8eb2-eaea2a3304d5</ProjectGuid>
+    <ProjectGuid>0307b967-4485-42ba-88cd-af0210312acf</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ID0001</RootNamespace>
-    <AssemblyName>ID0001</AssemblyName>
+    <RootNamespace>ID0012</RootNamespace>
+    <AssemblyName>ID0012</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>ID0001</Name>
+    <Name>ID0012</Name>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -26,7 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\ID0001.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ID0012.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\ID0001.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ID0012.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -58,9 +58,9 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="FizzBuzz.fs" />
-    <Compile Include="FizzBuzzProperties.fs" />
-    <Compile Include="Main0001.fs" />
+    <Compile Include="TriangleNumber.fs" />
+    <Compile Include="TriangleNumberProperties.fs" />
+    <Compile Include="Main0012.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>
@@ -97,6 +97,13 @@
       <HintPath>..\packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ID0003\ID0003.fsproj">
+      <Name>ID0003</Name>
+      <Project>{8437c29e-3147-4b23-abf7-e4268217bdf7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
