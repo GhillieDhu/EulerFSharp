@@ -58,7 +58,7 @@ let all4 x y =
 let max4 =
     let rows = Array.length gridLines
     let cols = Array.length gridLines.[0]
-    let alls = [|for row in 1..rows do for col in 1..cols -> all4 row col|]
+    let alls = [|for row in 0..rows do for col in 0..cols -> all4 row col|]
     alls
     |> Array.collect id
     |> Array.max
