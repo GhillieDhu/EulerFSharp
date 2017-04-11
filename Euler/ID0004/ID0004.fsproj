@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1b57e253-c368-409e-b460-fb952c3cda6a</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>ID0004</RootNamespace>
     <AssemblyName>ID0004</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

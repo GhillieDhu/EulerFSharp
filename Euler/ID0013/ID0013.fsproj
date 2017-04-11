@@ -6,14 +6,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>8437c29e-3147-4b23-abf7-e4268217bdf7</ProjectGuid>
+    <ProjectGuid>1a8a0b3c-111e-4ac9-b579-57bb7c322a5d</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ID0003</RootNamespace>
-    <AssemblyName>ID0003</AssemblyName>
+    <RootNamespace>ID0013</RootNamespace>
+    <AssemblyName>ID0013</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>ID0003</Name>
+    <Name>ID0013</Name>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -26,7 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\ID0003.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ID0013.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\ID0003.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ID0013.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -58,10 +58,8 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Primes.fs" />
-    <Compile Include="Factors.fs" />
-    <Compile Include="FactorsProperties.fs" />
-    <Compile Include="Main0003.fs" />
+    <Compile Include="TruncatedSum.fs" />
+    <Compile Include="Main0013.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>

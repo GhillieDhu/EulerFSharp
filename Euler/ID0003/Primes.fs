@@ -1,13 +1,15 @@
 ﻿module Primes
 
+
+let isPrime candidate =
+    (candidate % 2L = 1L)
+    &&
+    seq {for i in 3L .. 2L .. (int64 (sqrt (float candidate))) -> i}
+    |> Seq.exists (fun prime -> candidate % prime = 0L)
+    |> not
+
 let primes =
     let nextPrime lastPrime =
-        let isPrime candidate =
-            (candidate % 2L = 1L)
-            &&
-            seq {for i in 3L .. 2L .. (int64 (sqrt (float candidate))) -> i}
-            |> Seq.exists (fun prime -> candidate % prime = 0L)
-            |> not
         let firstCandidate = lastPrime + 2L
         Seq.initInfinite (int64 >> (*) 2L >> (+) firstCandidate)
         |> Seq.find isPrime
@@ -18,3 +20,7 @@ let primes =
         yield! Seq.unfold nextPrime 3L
     }
     |> Seq.cache
+
+let primesTo n =
+    Array.init n int64
+    |> Array.filter isPrime

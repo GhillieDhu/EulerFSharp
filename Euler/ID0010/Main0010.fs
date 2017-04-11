@@ -3,4 +3,4 @@
 open PrimeSum
 
 let solution () = 
-    primeSum 2000000L
+    primeSum 2000000
