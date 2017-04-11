@@ -16,3 +16,13 @@ let factors64 value =
 
 let factors value =
     factors64 (int64 value)
+
+let factored =
+    Seq.initInfinite (fun i -> (int64 i + 1L))
+    |> Seq.map (fun i -> (i, factors64 i))
+
+let permutePrimeFactors primeFactors =
+    primeFactors
+    |> Seq.countBy id
+    |> Seq.map (snd >> ((+) 1))
+    |> Seq.fold (*) 1
