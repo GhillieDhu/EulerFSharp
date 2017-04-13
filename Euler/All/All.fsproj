@@ -90,6 +90,11 @@
       <Project>{ba24ba74-5f1b-40e3-9724-17b45cd6d488}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\ID0018\ID0018.fsproj">
+      <Name>ID0018</Name>
+      <Project>{4e700075-a0f3-401e-a373-292de8085b04}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <Reference Include="FSharp.Control.AsyncSeq">
       <HintPath>..\packages\FSharp.Control.AsyncSeq.2.0.12\lib\net45\FSharp.Control.AsyncSeq.dll</HintPath>
       <Private>True</Private>
