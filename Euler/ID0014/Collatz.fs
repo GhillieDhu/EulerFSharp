@@ -14,32 +14,6 @@ let longestCollatz n =
         then (k, next, steps)
         else terminus k (steps+1) next
     let segments = Array.init (n-1) (fun i -> terminus (uint64 i + 1UL) 1 (uint64 i + 1UL))
-//    let rec chain partials =
-//        let incremental =
-//            partials
-//            |> Map.map
-//                (fun k (n, s) ->
-//                    if n = 0UL
-//                    then (n, s)
-//                    else
-//                        match Map.tryFind n partials with
-//                        | Some (nn, ss) -> 
-//                            if nn = 0UL
-//                            then (0UL, s+ss)
-//                            else (n, s)
-//                        | None ->
-//                            printfn "%d: (%d, %d)" k n s
-//                            (n, s))
-//        if incremental |> Map.forall (fun k (n, s) -> n = 0UL)
-//        then incremental
-//        else chain incremental
-//    segments
-//    |> Map.ofArray
-//    |> chain
-//    |> Map.map (fun k (n, s) -> s)
-//    |> Map.toSeq
-//    |> Seq.maxBy snd
-//    |> fst
     let dereference partials =
         let ends, middles =
             partials
