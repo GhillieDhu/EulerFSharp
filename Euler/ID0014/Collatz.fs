@@ -29,6 +29,10 @@ let longestCollatz n =
                         (fst next, s + snd next))
                 |> chain
         chain partials
-    dereference segments
-    |> Seq.maxBy snd
-    |> fst
+    let chained = dereference segments
+    let longest = 
+        chained
+        |> Array.maxBy snd
+    chained
+    |> Array.findIndex (fun t -> t = longest)
+    |> (+) 1
