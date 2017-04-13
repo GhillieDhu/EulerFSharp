@@ -24,6 +24,7 @@ let main argv =
         yield printSolutionWithTime Main0011.solution 11
         yield printSolutionWithTime Main0012.solution 12
         yield printSolutionWithTime Main0013.solution 13
+        yield printSolutionWithTime Main0014.solution 14
     }
     |> AsyncSeq.iter (printfn "%s")
     |> Async.StartImmediate

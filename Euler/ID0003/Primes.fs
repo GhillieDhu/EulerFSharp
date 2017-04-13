@@ -1,12 +1,13 @@
 ﻿module Primes
 
-
 let isPrime candidate =
-    (candidate % 2L = 1L)
-    &&
-    seq {for i in 3L .. 2L .. (int64 (sqrt (float candidate))) -> i}
-    |> Seq.exists (fun prime -> candidate % prime = 0L)
-    |> not
+    candidate = 2L
+    ||
+    (candidate % 2L = 1L
+        &&
+        seq {for i in 3L .. 2L .. (int64 (sqrt (float candidate))) -> i}
+        |> Seq.exists (fun prime -> candidate % prime = 0L)
+        |> not)
 
 let primes =
     let nextPrime lastPrime =
@@ -22,5 +23,5 @@ let primes =
     |> Seq.cache
 
 let primesTo n =
-    Array.init n int64
-    |> Array.filter isPrime
+    Array.init (n - 2) ((+) 2 >> int64)
+    |> Array.Parallel.choose (fun i -> if isPrime i then Some i else None)

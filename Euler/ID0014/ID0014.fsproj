@@ -5,16 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>c395201d-3b3b-4d1d-8eb2-eaea2a3304d5</ProjectGuid>
+    <ProjectGuid>8776c33f-96e9-4a97-ab9d-ccc7cb40322f</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ID0001</RootNamespace>
-    <AssemblyName>ID0001</AssemblyName>
+    <RootNamespace>ID0014</RootNamespace>
+    <AssemblyName>ID0014</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>ID0001</Name>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <Name>ID0014</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\ID0001.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ID0014.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\ID0001.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ID0014.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -57,9 +55,9 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="FizzBuzz.fs" />
-    <Compile Include="FizzBuzzProperties.fs" />
-    <Compile Include="Main0001.fs" />
+    <Compile Include="Collatz.fs" />
+    <Compile Include="CollatzProperties.fs" />
+    <Compile Include="Main0014.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>
