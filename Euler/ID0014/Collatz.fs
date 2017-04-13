@@ -13,25 +13,23 @@ let longestCollatz n =
         if next < N
         then (k, (next, steps))
         else terminus k (steps+1) next
-    let segments = Array.init (n-1) (fun i -> terminus (uint64 i + 1UL) 1 (uint64 i + 1UL))
+    let segments =
+        Array.init (n-1) (fun i -> terminus (uint64 i + 1UL) 1 (uint64 i + 1UL))
+        |> Map.ofArray
     let rec dereference partials =
-        let links = 
-            partials
-            |> Map.ofArray
-        let chain (i, (n, s)) =
+        let chain i (n, s) =
             if n = 0UL
-            then (i, (n, s))
+            then (n, s)
             else
-                let (n', s') = Map.find n links
-                (i, (n', s + s'))
+                let (n', s') = Map.find n partials
+                (n', s + s')
         let chained =
             partials
-            |> Array.map chain
-        if Array.forall (fun (k, (n, s)) -> n = 0UL) chained
+            |> Map.map chain
+        if Map.forall (fun k (n, s) -> n = 0UL) chained
         then chained
         else dereference chained
-//    Seq.unfold dereference segments
     dereference segments
-//    |> Seq.collect id
+    |> Map.toSeq
     |> Seq.maxBy snd
     |> fst
