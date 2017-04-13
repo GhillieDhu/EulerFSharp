@@ -61,6 +61,8 @@
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
+    <None Include="any\netstandard1.6\FSharp.Core.sigdata" />
+    <None Include="any\netstandard1.6\FSharp.Core.optdata" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ID0013\ID0013.fsproj">
@@ -73,12 +75,17 @@
       <Project>{8776c33f-96e9-4a97-ab9d-ccc7cb40322f}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\ID0015\ID0015.fsproj">
+      <Name>ID0015</Name>
+      <Project>{e04b3794-9811-4bcb-a71b-8ab49623bd54}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <Reference Include="FSharp.Control.AsyncSeq">
       <HintPath>..\packages\FSharp.Control.AsyncSeq.2.0.12\lib\net45\FSharp.Control.AsyncSeq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Core">
-      <HintPath>..\packages\FSharp.Core.4.1.2\lib\net45\FSharp.Core.dll</HintPath>
+      <HintPath>..\packages\FSharp.Core.4.1.12\lib\net45\FSharp.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />

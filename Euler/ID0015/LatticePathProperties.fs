@@ -1,0 +1,3 @@
+﻿module LatticePathProperties
+
+open LatticePath
