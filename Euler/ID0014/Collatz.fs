@@ -11,30 +11,27 @@ let longestCollatz n =
     let rec terminus k steps i =
         let next = nextCollatz i
         if next < N
-        then (k, next, steps)
+        then (k, (next, steps))
         else terminus k (steps+1) next
     let segments = Array.init (n-1) (fun i -> terminus (uint64 i + 1UL) 1 (uint64 i + 1UL))
-    let dereference partials =
-        let ends, middles =
-            partials
-            |> Array.Parallel.partition (fun (i, n, s) -> n = 0UL)
-        let terminals =
-            ends
-            |> Array.map (fun (i, n, s) -> (i, s))
+    let rec dereference partials =
         let links = 
-            terminals
+            partials
             |> Map.ofArray
-        let chain (i, n, s) =
-            match Map.tryFind n links with
-            | Some t -> (i, 0UL, s+t)
-            | None -> (i, n, s)
+        let chain (i, (n, s)) =
+            if n = 0UL
+            then (i, (n, s))
+            else
+                let (n', s') = Map.find n links
+                (i, (n', s + s'))
         let chained =
-            middles
+            partials
             |> Array.map chain
-        if Array.isEmpty chained
-        then None
-        else Some (terminals, chained)
-    Seq.unfold dereference segments
-    |> Seq.collect id
+        if Array.forall (fun (k, (n, s)) -> n = 0UL) chained
+        then chained
+        else dereference chained
+//    Seq.unfold dereference segments
+    dereference segments
+//    |> Seq.collect id
     |> Seq.maxBy snd
     |> fst
