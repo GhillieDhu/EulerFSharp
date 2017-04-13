@@ -3,4 +3,4 @@
 open LatticePath
 
 let solution () =
-    0
+    latticePaths 20
