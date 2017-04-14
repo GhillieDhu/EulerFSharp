@@ -15,16 +15,16 @@ let quotient (value, candidateFactors) =
 let primeFactors (value : uint64) =
     Seq.unfold quotient (value, primes)
 
-let allFactors value =
-    let primeFactors = primeFactors value
+let allFactors (primeFactors : uint64 seq) =
     primeFactors
     |> Seq.countBy id
     |> Seq.map (fun (p, c) -> Seq.init (c+1) (fun i -> uint64 ((BigInteger p)**i)))
-    |> Seq.reduce
+    |> Seq.fold
         (fun lower higher ->
-            lower
-            |> Seq.allPairs higher
+            higher
+            |> Seq.allPairs lower
             |> Seq.map (fun (a, b) -> a * b))
+        (seq {yield 1UL})
     |> Seq.sort
 
 let factored =

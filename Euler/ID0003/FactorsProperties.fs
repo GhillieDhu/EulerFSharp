@@ -30,7 +30,7 @@ let ``factors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, & 110`` () =
             yield 110UL
             yield 220UL
         }
-    allFactors 220UL
+    allFactors (primeFactors 220UL)
     |> Seq.zip expected
     |> Seq.forall (fun (e, a) -> e = a)
 
@@ -45,6 +45,6 @@ let ``factors of 284 are 1, 2, 4, 71, & 142`` () =
             yield 142UL
             yield 284UL
         }
-    allFactors 284UL
+    allFactors (primeFactors 284UL)
     |> Seq.zip expected
     |> Seq.forall (fun (e, a) -> e = a)
