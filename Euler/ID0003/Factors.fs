@@ -16,15 +16,11 @@ let primeFactors (value : uint64) =
     Seq.unfold quotient (value, primes)
 
 let allFactors (value : uint64) =
-    primeFactors value
-    |> Seq.countBy id
-    |> Seq.map (fun (p, c) -> Seq.init (c+1) (fun i -> uint64 ((BigInteger p)**i)))
-    |> Seq.fold
-        (fun lower higher ->
-            higher
-            |> Seq.allPairs lower
-            |> Seq.map (fun (a, b) -> a * b))
-        (seq {yield 1UL})
+    Seq.initInfinite (uint64 >> (+) 1UL)
+    |> Seq.takeWhile (fun i -> i*i <= value)
+    |> Seq.filter (fun i -> value % i = 0UL)
+    |> Seq.collect (fun i -> seq {yield i; yield value / i})
+    |> Seq.distinct
     |> Seq.sort
     
 let primeFactored =
