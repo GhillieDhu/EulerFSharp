@@ -100,6 +100,11 @@
       <Project>{9006a514-e7f1-40eb-80fa-c0c477de3e51}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\ID0020\ID0020.fsproj">
+      <Name>ID0020</Name>
+      <Project>{60f80b90-e2ba-472f-ac64-d28384ef924e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\ID0067\ID0067.fsproj">
       <Name>ID0067</Name>
       <Project>{12565e8d-ffb3-4c39-9d46-140688686902}</Project>

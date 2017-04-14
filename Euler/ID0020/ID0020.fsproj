@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>72980c7c-da86-48bc-b9bd-019ef712d334</ProjectGuid>
+    <ProjectGuid>60f80b90-e2ba-472f-ac64-d28384ef924e</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ID0016</RootNamespace>
-    <AssemblyName>ID0016</AssemblyName>
+    <RootNamespace>ID0020</RootNamespace>
+    <AssemblyName>ID0020</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>ID0016</Name>
+    <Name>ID0020</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\ID0016.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ID0020.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\ID0016.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ID0020.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -55,10 +55,9 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="DigitSum.fs" />
-    <Compile Include="PowerDigitSum.fs" />
-    <Compile Include="PowerDigitSumProperties.fs" />
-    <Compile Include="Main0016.fs" />
+    <Compile Include="FactorialDigitSum.fs" />
+    <Compile Include="FactorialDigitSumProperties.fs" />
+    <Compile Include="Main0020.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
     <None Include="any\netstandard1.6\FSharp.Core.sigdata" />
@@ -97,6 +96,13 @@
       <HintPath>..\packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ID0016\ID0016.fsproj">
+      <Name>ID0016</Name>
+      <Project>{72980c7c-da86-48bc-b9bd-019ef712d334}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
