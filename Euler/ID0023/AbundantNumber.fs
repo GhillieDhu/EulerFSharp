@@ -24,10 +24,9 @@ let nonAbundantSums =
         Seq.allPairs abundants abundants
         |> Seq.map (fun (a, b) -> a + b)
         |> Seq.filter ((>) 28123UL)
-        |> Set.ofSeq
+        |> Seq.distinct
+        |> Seq.sum
     let possibles =
         Seq.init 28123 uint64
-        |> Set.ofSeq
-    Set.difference possibles sums
-    |> Set.toSeq
-    |> Seq.sum
+        |> Seq.sum
+    possibles - sums

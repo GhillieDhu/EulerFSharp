@@ -54,6 +54,9 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ID0023", "ID0023\ID0023.fsproj", "{CA24C652-A4C3-46F4-BD01-8E0DA8E02794}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
