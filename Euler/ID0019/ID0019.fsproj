@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>12565e8d-ffb3-4c39-9d46-140688686902</ProjectGuid>
+    <ProjectGuid>9006a514-e7f1-40eb-80fa-c0c477de3e51</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ID0067</RootNamespace>
-    <AssemblyName>ID0067</AssemblyName>
+    <RootNamespace>ID0019</RootNamespace>
+    <AssemblyName>ID0019</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>ID0067</Name>
+    <Name>ID0019</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\ID0067.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ID0019.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\ID0067.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ID0019.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -55,10 +55,9 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Content Include="p067_triangle.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Compile Include="Main0067.fs" />
+    <Compile Include="SundayCount.fs" />
+    <Compile Include="SundayCountProperties.fs" />
+    <Compile Include="Main0019.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
     <None Include="any\netstandard1.6\FSharp.Core.sigdata" />
@@ -81,11 +80,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <ProjectReference Include="..\ID0018\ID0018.fsproj">
-      <Name>ID0018</Name>
-      <Project>{4e700075-a0f3-401e-a373-292de8085b04}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <Reference Include="System.ValueTuple">
       <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
       <Private>True</Private>
