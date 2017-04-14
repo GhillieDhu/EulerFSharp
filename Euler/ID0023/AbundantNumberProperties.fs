@@ -5,5 +5,5 @@ open FsCheck.Xunit
 
 [<Property>]
 let ``12 is the smallest abundant number`` () =
-    abundants
+    abundants ()
     |> Seq.head = 12UL 

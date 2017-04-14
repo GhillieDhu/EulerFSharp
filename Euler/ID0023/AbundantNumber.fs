@@ -2,24 +2,15 @@
 
 open Factors
 
-let (|Deficient|Perfect|Abundant|) number =
-    let properDivisorSum = Seq.sum (allFactors number) - number
-    if properDivisorSum < number
-    then Deficient
-    elif properDivisorSum = number
-    then Perfect
-    else Abundant
+let abundants () =
+    Array.init 28123 (uint64 >> (+) 1UL)
+    |> Array.Parallel.choose (fun i ->
+        if Seq.sum (allFactors i) > 2UL*i
+        then Some i
+        else None)
 
-let abundants =
-    Seq.initInfinite (uint64 >> (+) 1UL)
-    |> Seq.choose (fun i ->
-        match i with
-        | Deficient | Perfect -> None
-        | Abundant -> Some i)
-    |> Seq.cache
-
-let nonAbundantSums =
-    let abundants = Seq.takeWhile ((>) 28123UL) abundants
+let nonAbundantSums () =
+    let abundants = abundants ()
     let sums =
         Seq.allPairs abundants abundants
         |> Seq.map (fun (a, b) -> a + b)
