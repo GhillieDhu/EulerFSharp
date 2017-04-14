@@ -11,15 +11,22 @@ let quotient (value, candidateFactors) =
         | _, _, _ -> divide dividend (Seq.head (Seq.tail divisors)) (Seq.tail divisors)
     divide value (Seq.head candidateFactors) candidateFactors
     
-let factors64 value =
+let primeFactors64 value =
     Seq.unfold quotient (value, primes)
 
-let factors value =
-    factors64 (int64 value)
+let primeFactors value =
+    primeFactors64 (int64 value)
+
+let allFactors64 value =
+    let primeFactors = primeFactors64 value
+    primeFactors
+
+let allFactors value =
+    allFactors64 (int64 value)
 
 let factored =
     Seq.initInfinite (fun i -> (int64 i + 1L))
-    |> Seq.map (fun i -> (i, factors64 i))
+    |> Seq.map (fun i -> (i, primeFactors64 i))
 
 let permutePrimeFactors primeFactors =
     primeFactors
