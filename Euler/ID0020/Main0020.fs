@@ -1,4 +1,6 @@
 ﻿module Main0020
 
+open FactorialDigitSum
+
 let solution () =
-    0
+    factorialDigitSum 100

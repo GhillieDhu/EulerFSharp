@@ -5,4 +5,4 @@ open FsCheck.Xunit
 
 [<Property>]
 let ``digit sum of 10! is 27`` () =
-    false
+    factorialDigitSum 10 = 27

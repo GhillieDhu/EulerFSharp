@@ -55,6 +55,7 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Factorial.fs" />
     <Compile Include="FactorialDigitSum.fs" />
     <Compile Include="FactorialDigitSumProperties.fs" />
     <Compile Include="Main0020.fs" />
