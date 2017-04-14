@@ -3,4 +3,5 @@
 open AmicableNumber
 
 let solution () =
-    0
+    amiciBelow 10000
+    |> Array.sum
