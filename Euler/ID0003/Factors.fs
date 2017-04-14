@@ -15,8 +15,8 @@ let quotient (value, candidateFactors) =
 let primeFactors (value : uint64) =
     Seq.unfold quotient (value, primes)
 
-let allFactors (primeFactors : uint64 seq) =
-    primeFactors
+let allFactors (value : uint64) =
+    primeFactors value
     |> Seq.countBy id
     |> Seq.map (fun (p, c) -> Seq.init (c+1) (fun i -> uint64 ((BigInteger p)**i)))
     |> Seq.fold
@@ -26,10 +26,14 @@ let allFactors (primeFactors : uint64 seq) =
             |> Seq.map (fun (a, b) -> a * b))
         (seq {yield 1UL})
     |> Seq.sort
-
-let factored =
+    
+let primeFactored =
     Seq.initInfinite (fun i -> (uint64 i + 1UL))
     |> Seq.map (fun i -> (i, primeFactors i))
+
+let allFactored =
+    Seq.initInfinite (fun i -> (uint64 i + 1UL))
+    |> Seq.map (fun i -> (i, allFactors i))
 
 let permutePrimeFactors primeFactors =
     primeFactors

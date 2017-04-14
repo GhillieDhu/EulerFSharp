@@ -1,10 +1,9 @@
 ﻿module AmicableNumber
 
-open Primes
 open Factors
 
 let amicus n =
-    let factors = allFactors (primeFactors n)
+    let factors = allFactors n
     Seq.sum factors - n
 
 let areAmicable i ami =

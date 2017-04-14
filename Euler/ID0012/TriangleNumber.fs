@@ -9,7 +9,7 @@ let mergeTrimPermute i j =
     |> permutePrimeFactors
 
 let triangleFactors =
-    factored
+    primeFactored
     |> Seq.pairwise
     |> Seq.map
         (fun ((m, i), (n, j)) -> (m * n / 2UL, mergeTrimPermute i j))
