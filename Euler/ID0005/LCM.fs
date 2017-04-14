@@ -10,7 +10,7 @@ let lcm divisors =
         primes
         |> Seq.takeWhile (fun i -> i <= maxFactor)
     divisors
-    |> Seq.map primeFactors64
+    |> Seq.map primeFactors
     |> Seq.collect (Seq.countBy id)
     |> Seq.groupBy fst
     |> Seq.map (fun (rf, counts) -> rf, snd (Seq.maxBy snd counts))

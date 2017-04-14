@@ -1,27 +1,27 @@
 ﻿module Primes
 
 let isPrime candidate =
-    candidate = 2L
+    candidate = 2UL
     ||
-    (candidate % 2L = 1L
+    (candidate % 2UL = 1UL
         &&
-        seq {for i in 3L .. 2L .. (int64 (sqrt (float candidate))) -> i}
-        |> Seq.exists (fun prime -> candidate % prime = 0L)
+        seq {for i in 3UL .. 2UL .. (uint64 (sqrt (float candidate))) -> i}
+        |> Seq.exists (fun prime -> candidate % prime = 0UL)
         |> not)
 
 let primes =
     let nextPrime lastPrime =
-        let firstCandidate = lastPrime + 2L
-        Seq.initInfinite (int64 >> (*) 2L >> (+) firstCandidate)
+        let firstCandidate = lastPrime + 2UL
+        Seq.initInfinite (uint64 >> (*) 2UL >> (+) firstCandidate)
         |> Seq.find isPrime
         |> fun candidate -> Some (candidate, candidate)
     seq {
-        yield 2L
-        yield 3L
-        yield! Seq.unfold nextPrime 3L
+        yield 2UL
+        yield 3UL
+        yield! Seq.unfold nextPrime 3UL
     }
     |> Seq.cache
 
 let primesTo n =
-    Array.init (n - 2) ((+) 2 >> int64)
+    Array.init (n - 2) ((+) 2 >> uint64)
     |> Array.Parallel.choose (fun i -> if isPrime i then Some i else None)

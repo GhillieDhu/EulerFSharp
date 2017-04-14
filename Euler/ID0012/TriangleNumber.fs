@@ -12,7 +12,7 @@ let triangleFactors =
     factored
     |> Seq.pairwise
     |> Seq.map
-        (fun ((m, i), (n, j)) -> (m * n / 2L, mergeTrimPermute i j))
+        (fun ((m, i), (n, j)) -> (m * n / 2UL, mergeTrimPermute i j))
 
 let triangleWithNFactors k =
     triangleFactors

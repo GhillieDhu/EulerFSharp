@@ -3,5 +3,5 @@
 open Factors
 
 let solution () =
-    primeFactors64 600851475143L
+    primeFactors 600851475143UL
     |> Seq.max

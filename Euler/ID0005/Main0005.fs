@@ -3,4 +3,4 @@
 open LCM
 
 let solution () = 
-    lcm (Seq.init 20 (int64 >> (+) 1L))
+    lcm (Seq.init 20 (uint64 >> (+) 1UL))
