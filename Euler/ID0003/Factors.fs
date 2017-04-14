@@ -18,14 +18,14 @@ let primeFactors (value : uint64) =
 let allFactors value =
     let primeFactors = primeFactors value
     primeFactors
-    |> Seq.map BigInteger
     |> Seq.countBy id
-    |> Seq.map (fun (p, c) -> Seq.init (c+1) (fun i -> p**i))
+    |> Seq.map (fun (p, c) -> Seq.init (c+1) (fun i -> uint64 ((BigInteger p)**i)))
     |> Seq.reduce
         (fun lower higher ->
             lower
             |> Seq.allPairs higher
             |> Seq.map (fun (a, b) -> a * b))
+    |> Seq.sort
 
 let factored =
     Seq.initInfinite (fun i -> (uint64 i + 1UL))

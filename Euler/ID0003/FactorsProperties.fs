@@ -13,36 +13,38 @@ let ``13195 factors are 5 7 13 29`` () =
     |> Seq.map (fun tup -> (fst tup) = (snd tup))
     |> Seq.reduce (&&)
     
-//[<Property>]
-//let ``factors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, & 110`` () =
-//    let expected =
-//        seq {
-//            yield 1
-//            yield 2
-//            yield 4
-//            yield 5
-//            yield 10
-//            yield 11
-//            yield 20
-//            yield 22
-//            yield 44
-//            yield 55
-//            yield 110
-//        }
-//    allFactors 220UL
-//    |> Seq.zip expected
-//    |> Seq.forall (fun (e, a) -> e = a)
-//
-//[<Property>]
-//let ``factors of 284 are 1, 2, 4, 71, & 142`` () =
-//    let expected =
-//        seq {
-//            yield 1
-//            yield 2
-//            yield 4
-//            yield 71
-//            yield 142
-//        }
-//    allFactors 284UL
-//    |> Seq.zip expected
-//    |> Seq.forall (fun (e, a) -> e = a)
+[<Property>]
+let ``factors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, & 110`` () =
+    let expected =
+        seq {
+            yield 1UL
+            yield 2UL
+            yield 4UL
+            yield 5UL
+            yield 10UL
+            yield 11UL
+            yield 20UL
+            yield 22UL
+            yield 44UL
+            yield 55UL
+            yield 110UL
+            yield 220UL
+        }
+    allFactors 220UL
+    |> Seq.zip expected
+    |> Seq.forall (fun (e, a) -> e = a)
+
+[<Property>]
+let ``factors of 284 are 1, 2, 4, 71, & 142`` () =
+    let expected =
+        seq {
+            yield 1UL
+            yield 2UL
+            yield 4UL
+            yield 71UL
+            yield 142UL
+            yield 284UL
+        }
+    allFactors 284UL
+    |> Seq.zip expected
+    |> Seq.forall (fun (e, a) -> e = a)
