@@ -3,4 +3,4 @@
 open AbundantNumber
 
 let solution () =
-    nonAbundantSums ()
+    nonAbundantSumsBelow 28123

@@ -5,5 +5,5 @@ open FsCheck.Xunit
 
 [<Property>]
 let ``12 is the smallest abundant number`` () =
-    abundants ()
-    |> Seq.head = 12UL
+    let abundance = areAbundant 12
+    snd (Array.get abundance (12-1))
