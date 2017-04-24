@@ -2,6 +2,14 @@
 
 open System
 
+let rec insertions x = function
+    | []             -> [[x]]
+    | (y :: ys) as l -> (x::l)::(List.map (fun x -> y::x) (insertions x ys))
+
+let rec permutations = function
+    | []      -> seq [ [] ]
+    | x :: xs -> Seq.collect (insertions x) (permutations xs)
+
 let permute a =
     let rec shuffle permuted rest =
         match Set.count rest with
@@ -16,8 +24,11 @@ let permute a =
     |> Seq.chunkBySize a
 
 let lexicographic a =
-    permute a
-    |> Seq.map (Array.fold (fun acc chint -> acc + (string chint)) String.Empty)
+    List.init a id
+    |> permutations
+    |> Seq.map (List.fold (fun acc chint -> acc + (string chint)) String.Empty)
+//    permute a
+//    |> Seq.map (Array.fold (fun acc chint -> acc + (string chint)) String.Empty)
     |> Seq.sort
 
 let nthLexicographic a n =
