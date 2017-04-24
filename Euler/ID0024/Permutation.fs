@@ -1,6 +1,7 @@
 ﻿module Permutation
 
 open System
+open System.Numerics
 
 let rec insertions x = function
     | []             -> [[x]]
@@ -32,6 +33,17 @@ let lexicographic a =
     |> Seq.sort
 
 let nthLexicographic a n =
-    lexicographic a
+    let chars =
+        ['0'..'9']
+        |> List.take a
+
+    Seq.initInfinite int64
+    |> Seq.takeWhile (fun k -> float k < (10.)**(float a))
+    |> Seq.filter (fun num ->
+        let strnum = (string num).ToCharArray ()
+        chars
+        |> List.forall (fun c -> Array.contains c strnum))
+
+//    lexicographic a
     |> Seq.item (n-1)
-    |> Int64.Parse
+//    |> Int64.Parse
