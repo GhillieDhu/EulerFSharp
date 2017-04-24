@@ -1,5 +1,7 @@
 ﻿module Permutation
 
+open Factorial
+open System.Numerics
 open System
 
 let rec insertions x =
@@ -22,7 +24,23 @@ let lexicographic a =
     |> Seq.map (List.fold (fun acc chint -> acc + (string chint)) String.Empty)
     |> Seq.sort
 
-let nthLexicographic a n =
-    lexicographic a
-    |> Seq.item (n-1)
-    |> Int64.Parse
+let nthLexicographic elems n =
+    let jump (k, remaining) =
+        if Seq.isEmpty remaining
+        then None
+        else
+            let stride = int (factorial ((Seq.length remaining) - 1))
+            let steps = (k-1) / stride
+            let next = Seq.item steps remaining
+            let front =
+                if 0 < steps
+                then Seq.take steps remaining
+                else Seq.empty
+            let back = 
+                if steps < Seq.length remaining
+                then Seq.skip (steps+1) remaining
+                else Seq.empty
+            Some (next, (k - (steps * stride), Seq.append front back))
+    Seq.unfold jump (n, elems)
+    |> Seq.map Char.ToString
+    |> Seq.fold (+) String.Empty

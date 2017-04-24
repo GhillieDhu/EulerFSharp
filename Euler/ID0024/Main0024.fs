@@ -1,6 +1,8 @@
 ﻿module Main0024
 
 open Permutation
+open System
 
 let solution () =
-    nthLexicographic 10 1000000
+    let elems = ['0'..'9']
+    nthLexicographic elems 1000000
