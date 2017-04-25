@@ -25,11 +25,16 @@ let lexicographic a =
     |> Seq.sort
 
 let nthLexicographic elems n =
+    let facts =
+        factorials
+        |> Seq.take (Seq.length elems)
+        |> Array.ofSeq
+        |> Array.map int
     let jump (k, remaining) =
         if Seq.isEmpty remaining
         then None
         else
-            let stride = int (factorial ((Seq.length remaining) - 1))
+            let stride = Array.item ((Seq.length remaining) - 1) facts
             let steps = (k-1) / stride
             let next = Seq.item steps remaining
             let front =
@@ -42,5 +47,3 @@ let nthLexicographic elems n =
                 else Seq.empty
             Some (next, (k - (steps * stride), Seq.append front back))
     Seq.unfold jump (n, elems)
-    |> Seq.map Char.ToString
-    |> Seq.fold (+) String.Empty
