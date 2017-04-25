@@ -97,6 +97,13 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ID0002\ID0002.fsproj">
+      <Name>ID0002</Name>
+      <Project>{dc847a22-c2b5-41c7-8e09-b169f5f3b416}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

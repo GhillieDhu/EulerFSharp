@@ -5,7 +5,7 @@ open FsCheck.Xunit
 
 [<Property>]
 let ``first 10 distinct fib numbers`` () =
-    let actual = fib 100
+    let actual = fibonacci |> Seq.take 100
     let expected = List.toSeq [1; 2; 3; 5; 8; 13; 21; 34; 55; 89]
     actual
     |> Seq.zip expected
@@ -14,7 +14,7 @@ let ``first 10 distinct fib numbers`` () =
 
 [<Property>]
 let ``even subset of first 10 distinct fib numbers`` () =
-    let actual = evenSeq (fib 100)
+    let actual = evenSeq (fibonacci |> Seq.take 100)
     let expected = List.toSeq [2; 8; 34]
     actual
     |> Seq.zip expected

@@ -1,12 +1,11 @@
 ﻿module Fibonacci
 
-let fibK n (i, j) =
-    if i <= n
-    then Some (i, (j, i + j))
-    else None
+let nextFibonacci (i, j) =
+    Some (i, (j, i + j))
 
-let fib n =
-    Seq.unfold (fibK n) (1, 2)
+let fibonacci =
+    Seq.unfold nextFibonacci (1, 2)
+    |> Seq.cache
 
 let evenSeq inSeq =
     inSeq
