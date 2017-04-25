@@ -1,6 +1,6 @@
 ﻿module Main0002
 
-open EvenFib
+open Fibonacci
 open System.Diagnostics
 
 let solution () = 

@@ -5,16 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>dc847a22-c2b5-41c7-8e09-b169f5f3b416</ProjectGuid>
+    <ProjectGuid>bd10f11e-31dc-4e6a-b34a-17588804117a</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ID0002</RootNamespace>
-    <AssemblyName>ID0002</AssemblyName>
+    <RootNamespace>ID0025</RootNamespace>
+    <AssemblyName>ID0025</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>ID0002</Name>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <Name>ID0025</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\ID0002.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ID0025.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\ID0002.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ID0025.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -57,9 +55,9 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Fibonacci.fs" />
-    <Compile Include="FibonacciProperties.fs" />
-    <Compile Include="Main0002.fs" />
+    <Compile Include="FibDigit.fs" />
+    <Compile Include="FibDigitProperties.fs" />
+    <Compile Include="Main0025.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
     <None Include="any\netstandard1.6\FSharp.Core.sigdata" />

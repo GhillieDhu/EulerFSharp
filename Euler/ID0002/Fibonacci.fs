@@ -1,4 +1,4 @@
-﻿module EvenFib
+﻿module Fibonacci
 
 let fibK n (i, j) =
     if i <= n

@@ -1,6 +1,6 @@
-﻿module EvenFibProperties
+﻿module FibonacciProperties
 
-open EvenFib
+open Fibonacci
 open FsCheck.Xunit
 
 [<Property>]
