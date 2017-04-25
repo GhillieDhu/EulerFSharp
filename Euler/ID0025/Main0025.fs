@@ -3,4 +3,4 @@
 open FibDigit
 
 let solution () =
-    0
+    fibDigit 1000

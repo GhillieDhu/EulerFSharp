@@ -5,8 +5,8 @@ open FsCheck.Xunit
 
 [<Property>]
 let ``first 10 distinct fib numbers`` () =
-    let actual = fibonacci |> Seq.take 100
-    let expected = List.toSeq [1; 2; 3; 5; 8; 13; 21; 34; 55; 89]
+    let actual = fibonacci |> Seq.takeWhile (fun f -> f < 100UL) |> Seq.distinct
+    let expected = List.toSeq [1UL; 2UL; 3UL; 5UL; 8UL; 13UL; 21UL; 34UL; 55UL; 89UL]
     actual
     |> Seq.zip expected
     |> Seq.map (fun (a, e) -> a = e)
@@ -14,8 +14,8 @@ let ``first 10 distinct fib numbers`` () =
 
 [<Property>]
 let ``even subset of first 10 distinct fib numbers`` () =
-    let actual = evenSeq (fibonacci |> Seq.take 100)
-    let expected = List.toSeq [2; 8; 34]
+    let actual = evenSeq (fibonacci |> Seq.takeWhile (fun f -> f < 100UL) |> Seq.distinct)
+    let expected = List.toSeq [2UL; 8UL; 34UL]
     actual
     |> Seq.zip expected
     |> Seq.map (fun (a, e) -> a = e)
