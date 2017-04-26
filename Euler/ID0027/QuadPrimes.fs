@@ -8,7 +8,7 @@ let relevantPrimes =
     |> Array.ofSeq
     |> Array.map int64
 
-let quadPrimes relevantPrimes a b =
+let quadPrimes a b =
     Seq.initInfinite (int64 >> fun n -> n*n + a*n + b)
     |> Seq.takeWhile (fun m -> Seq.contains m relevantPrimes)
     |> Seq.length
