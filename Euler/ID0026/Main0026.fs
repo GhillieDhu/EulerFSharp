@@ -1,11 +1,9 @@
 ﻿module Main0026
 
 open Reciprocal
-open Primes
 
 let solution () =
-    primes
-    |> Seq.takeWhile (fun p -> p < 1000UL)
-    |> Seq.map recipCyc
+    primeRecipCyc
+    |> Seq.takeWhile (fun (p, d) -> p < 1000UL)
     |> Seq.maxBy snd
     |> fst
