@@ -5,9 +5,10 @@ open Primes
 open System.Numerics
 
 let primeRecipCyc =
+    let ten = BigInteger 10
     let rec unfloat n d =
-        let shifter = (BigInteger 10)**d
-        if shifter/n > BigInteger.Zero && shifter/n = (shifter**2)/n % shifter
+        let composite = (ten**d) - BigInteger.One
+        if composite % n = BigInteger.Zero
         then d
         else unfloat n (d+1)
     primes
