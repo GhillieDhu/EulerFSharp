@@ -2,9 +2,13 @@
 
 open Primes
 
-let quadPrimes a b =
+let relevantPrimes =
+    primes
+    |> Seq.takeWhile (fun p -> p < 2000UL)
+    |> Array.ofSeq
+    |> Array.map int64
+
+let quadPrimes relevantPrimes a b =
     Seq.initInfinite (int64 >> fun n -> n*n + a*n + b)
-    |> Seq.filter (fun n -> n > 0L)
-    |> Seq.map uint64
-    |> Seq.takeWhile isPrime
+    |> Seq.takeWhile (fun m -> Seq.contains m relevantPrimes)
     |> Seq.length
