@@ -38,6 +38,8 @@ let main argv =
         yield printSolutionWithTime Main0025.solution 25
         yield printSolutionWithTime Main0026.solution 26
         yield printSolutionWithTime Main0027.solution 27
+        yield printSolutionWithTime Main0028.solution 28
+        yield printSolutionWithTime Main0029.solution 29
         yield printSolutionWithTime Main0067.solution 67
     }
     |> AsyncSeq.iter (printfn "%s")

@@ -140,6 +140,16 @@
       <Project>{99ed5da9-7ddc-4417-bd16-72ea4403a87c}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\ID0028\ID0028.fsproj">
+      <Name>ID0028</Name>
+      <Project>{fb75620b-2ae3-4303-a044-510f7fdab552}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ID0029\ID0029.fsproj">
+      <Name>ID0029</Name>
+      <Project>{ac195dbf-2780-4bd4-b7bd-534c03a6901a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\ID0067\ID0067.fsproj">
       <Name>ID0067</Name>
       <Project>{12565e8d-ffb3-4c39-9d46-140688686902}</Project>
